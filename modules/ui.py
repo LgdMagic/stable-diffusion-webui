@@ -1383,6 +1383,8 @@ def create_ui():
             if is_quicksettings:
                 res = comp(label=info.label, value=fun(), elem_id=elem_id, **(args or {}))
                 create_refresh_button(res, info.refresh, info.component_args, "refresh_" + key)
+                #TODO:这里加logo组件
+                gr.HTML(shared.html("logoHeader.html"), elem_id="logo")
             else:
                 with FormRow():
                     res = comp(label=info.label, value=fun(), elem_id=elem_id, **(args or {}))
